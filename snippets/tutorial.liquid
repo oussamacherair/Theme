@@ -1,7 +1,20 @@
-{%  assign myvaribal = 16%}
+{%  assign myvaribal = 20%}
 
 {%  if myvaribal < 18 %}
 <p>this product is not listed</p>
 {% elsif myvaribal %}
 <p>Check out this Baloon</p>
 {%  endif %} 
+
+
+<p>{{ product.title }} </p>
+
+{% unless product.tags contains 'premium' %}
+    <p>
+        this product is not premuim
+    </p>
+    {% else %}
+    <p>
+        this product is  premuim
+    </p>
+    {% endunless %}
